@@ -1,70 +1,85 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>SkyView Drone Services</title>
-  <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet"/>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
   <style>
     body {
       margin: 0;
       font-family: 'Lato', sans-serif;
-      background-color: #f4f4f4;
-      color: #333;
+      background-color: #f9fafa;
+      color: #2a2a2a;
     }
 
     header {
-      background-color: #1c2331;
+      background-color: #1f2e45;
       color: white;
-      padding: 2rem;
+      padding: 2.5rem 10%;
       text-align: center;
     }
 
     section {
-      padding: 2rem 10%;
+      padding: 3rem 10%;
+      max-width: 1000px;
+      margin: auto;
     }
 
     h2 {
-      color: #1c2331;
+      color: #1f2e45;
       margin-top: 0;
     }
 
     ul {
       list-style-type: disc;
-      padding-left: 1.2rem;
+      padding-left: 1.5rem;
     }
 
     footer {
-      background-color: #1c2331;
+      background-color: #1f2e45;
       color: white;
       text-align: center;
-      padding: 1rem;
+      padding: 1.2rem;
+      font-size: 0.9rem;
       margin-top: 2rem;
     }
 
     .spazio-immagine {
       height: 200px;
-      background-color: #ddd;
+      background-color: #dce4ed;
       text-align: center;
       line-height: 200px;
-      color: #555;
+      color: #607d8b;
       margin: 2rem 0;
+      border-radius: 8px;
+    }
+
+    a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
 
-  <header>
+  <header data-aos="fade-down">
     <h1>SkyView Drone Services</h1>
     <p>Riprese aeree professionali per eventi, infrastrutture e sicurezza</p>
   </header>
 
-  <section>
+  <section data-aos="fade-up">
     <h2>Chi siamo</h2>
     <p>Siamo un team di piloti certificati che offre servizi con drone per eventi, riprese tecniche, sorveglianza e ispezioni. Ogni missione è svolta nel rispetto delle normative ENAC e con la massima cura per la qualità visiva e la sicurezza operativa.</p>
+    <p><strong>Operativi nelle zone di Abruzzo e Liguria.</strong></p>
   </section>
 
-  <section>
+  <section data-aos="fade-up">
     <h2>I nostri servizi</h2>
     <ul>
       <li><strong>Eventi privati:</strong> matrimoni, feste, cerimonie</li>
@@ -74,20 +89,27 @@
     </ul>
   </section>
 
-  <section>
+  <section data-aos="fade-up">
     <h2>Galleria (in arrivo)</h2>
     <div class="spazio-immagine">[ Qui potrai inserire le tue foto ]</div>
   </section>
 
-  <section>
-    <h2>Contattaci</h2>
-    <p>Email: <a href="mailto:info@skyviewdroni.it">info@skyviewdroni.it</a></p>
-    <p>WhatsApp: <a href="tel:+393451234567">+39 345 123 4567</a></p>
+  <section data-aos="fade-up">
+    <h2>Richiedi un preventivo</h2>
+    <p>Per ricevere un preventivo personalizzato sui nostri servizi, contattaci direttamente via email. Ti risponderemo entro 24 ore con una proposta su misura per le tue esigenze.</p>
+    <p>📧 <strong>Email:</strong> <a href="mailto:a.marciano.solution@gmail.com">a.marciano.solution@gmail.com</a></p>
   </section>
 
   <footer>
     © 2025 SkyView Drone Services — Tutti i diritti riservati
   </footer>
 
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  </script>
 </body>
 </html>
