@@ -59,7 +59,7 @@
       text-decoration: underline;
     }
 
-    /* Swiper slider */
+    /* Swiper */
     .swiper {
       width: 100%;
       max-width: 900px;
@@ -126,19 +126,19 @@
           <img src="img/img2.jpg" alt="Drone view 2">
         </div>
 
-        <!-- Video -->
+        <!-- Video autoplay e mutati -->
         <div class="swiper-slide">
-          <video controls>
+          <video muted autoplay playsinline>
             <source src="img/video1.mp4" type="video/mp4">
           </video>
         </div>
         <div class="swiper-slide">
-          <video controls>
+          <video muted autoplay playsinline>
             <source src="img/video2.mp4" type="video/mp4">
           </video>
         </div>
         <div class="swiper-slide">
-          <video controls>
+          <video muted autoplay playsinline>
             <source src="img/video3.mp4" type="video/mp4">
           </video>
         </div>
@@ -157,34 +157,34 @@
     © 2025 SkyView Drone Services — Tutti i diritti riservati
   </footer>
 
-  <!-- Script AOS + Swiper -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-<script>
-  AOS.init({ duration: 1000, once: true });
+  <!-- Script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+    AOS.init({ duration: 1000, once: true });
 
-  const swiper = new Swiper(".mySwiper", {
-    loop: true,
-    effect: "fade",
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false,
-    },
-    fadeEffect: {
-      crossFade: true
-    },
-  });
+    const swiper = new Swiper(".mySwiper", {
+      loop: true,
+      effect: "fade",
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+      },
+      fadeEffect: {
+        crossFade: true
+      },
+    });
 
-  // Pausa autoplay durante i video, riprende alla fine
-  document.querySelectorAll("video").forEach(video => {
-    video.addEventListener("loadeddata", () => {
-      video.currentTime = 0; // forza l'inizio
+    // Pausa autoplay durante i video, riprende solo a fine riproduzione
+    document.querySelectorAll("video").forEach(video => {
+      video.addEventListener("play", () => {
+        swiper.autoplay.stop();
+      });
+      video.addEventListener("ended", () => {
+        swiper.autoplay.start();
+      });
     });
-    video.addEventListener("play", () => {
-      swiper.autoplay.stop();
-    });
-    video.addEventListener("ended", () => {
-      swiper.autoplay.start();
-    });
-  });
-</script>
+  </script>
+</body>
+</html>
+
