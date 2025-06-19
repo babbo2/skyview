@@ -158,32 +158,33 @@
   </footer>
 
   <!-- Script AOS + Swiper -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-  <script>
-    AOS.init({ duration: 1000, once: true });
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+  AOS.init({ duration: 1000, once: true });
 
-    const swiper = new Swiper(".mySwiper", {
-      loop: true,
-      effect: "fade",
-      autoplay: {
-        delay: 4000,
-        disableOnInteraction: false,
-      },
-      fadeEffect: {
-        crossFade: true
-      },
-    });
+  const swiper = new Swiper(".mySwiper", {
+    loop: true,
+    effect: "fade",
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false,
+    },
+    fadeEffect: {
+      crossFade: true
+    },
+  });
 
-    // Stop autoplay when a video is playing, resume when it ends
-    document.querySelectorAll("video").forEach(video => {
-      video.addEventListener("play", () => {
-        swiper.autoplay.stop();
-      });
-      video.addEventListener("ended", () => {
-        swiper.autoplay.start();
-      });
+  // Pausa autoplay durante i video, riprende alla fine
+  document.querySelectorAll("video").forEach(video => {
+    video.addEventListener("loadeddata", () => {
+      video.currentTime = 0; // forza l'inizio
     });
-  </script>
-</body>
-</html>
+    video.addEventListener("play", () => {
+      swiper.autoplay.stop();
+    });
+    video.addEventListener("ended", () => {
+      swiper.autoplay.start();
+    });
+  });
+</script>
