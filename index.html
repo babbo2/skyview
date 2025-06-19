@@ -4,8 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>SkyView Drone Services</title>
+
+  <!-- Font + AOS + Swiper -->
   <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet"/>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+
   <style>
     body {
       margin: 0;
@@ -46,16 +50,6 @@
       margin-top: 2rem;
     }
 
-    .spazio-immagine {
-      height: 200px;
-      background-color: #dce4ed;
-      text-align: center;
-      line-height: 200px;
-      color: #607d8b;
-      margin: 2rem 0;
-      border-radius: 8px;
-    }
-
     a {
       color: #0066cc;
       text-decoration: none;
@@ -64,8 +58,41 @@
     a:hover {
       text-decoration: underline;
     }
+
+    /* Swiper */
+    .swiper {
+      width: 100%;
+      height: 100%;
+      margin-top: 2rem;
+    }
+
+    .swiper-slide {
+      position: relative;
+      text-align: center;
+      font-size: 18px;
+      background: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .swiper-slide img,
+    .swiper-slide video {
+      width: 100%;
+      height: auto;
+      max-height: 500px;
+      object-fit: cover;
+      opacity: 0.85;
+      transition: opacity 0.5s ease;
+    }
+
+    .swiper-slide-active img,
+    .swiper-slide-active video {
+      opacity: 1;
+    }
   </style>
 </head>
+
 <body>
 
   <header data-aos="fade-down">
@@ -90,26 +117,37 @@
   </section>
 
   <section data-aos="fade-up">
-    <h2>Galleria (in arrivo)</h2>
-    <div class="spazio-immagine">[ Qui potrai inserire le tue foto ]</div>
+    <h2>Galleria</h2>
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <!-- Immagini -->
+        <div class="swiper-slide">
+          <img src="img/Immagine WhatsApp 2025-06-20 ore 00.30.03_981be9e8.jpg" alt="Foto 1">
+        </div>
+        <div class="swiper-slide">
+          <img src="img/Immagine WhatsApp 2025-06-20 ore 00.30.44_f1f700bc.jpg" alt="Foto 2">
+        </div>
+
+        <!-- Video -->
+        <div class="swiper-slide">
+          <video controls>
+            <source src="img/Video WhatsApp 2025-06-20 ore 00.26.56_6747ba3d.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="swiper-slide">
+          <video controls>
+            <source src="img/Video WhatsApp 2025-06-20 ore 00.27.47_fa99ca16.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="swiper-slide">
+          <video controls>
+            <source src="img/Video WhatsApp 2025-06-20 ore 00.28.35_3c70e706.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
   </section>
 
   <section data-aos="fade-up">
     <h2>Richiedi un preventivo</h2>
-    <p>Per ricevere un preventivo personalizzato sui nostri servizi, contattaci direttamente via email. Ti risponderemo entro 24 ore con una proposta su misura per le tue esigenze.</p>
-    <p>📧 <strong>Email:</strong> <a href="mailto:a.marciano.solution@gmail.com">a.marciano.solution@gmail.com</a></p>
-  </section>
-
-  <footer>
-    © 2025 SkyView Drone Services — Tutti i diritti riservati
-  </footer>
-
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      duration: 1000,
-      once: true
-    });
-  </script>
-</body>
-</html>
+    <p>Per ricevere un preventivo personalizzato sui nostri servizi, contattaci dirett
